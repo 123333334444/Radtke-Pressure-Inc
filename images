@@ -1,0 +1,5 @@
+<script>start("/Users/family/Power wash/images/");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("deck.jpg","deck.jpg",0,14229,"13.9 kB",1737322498,"1/19/25, 4:34:58 PM");</script>
+<script>addRow("house.jpg","house.jpg",0,7687,"7.5 kB",1737322547,"1/19/25, 4:35:47 PM");</script>
+<script>addRow("pressure.jpg","pressure.jpg",0,10351,"10.1 kB",1737322180,"1/19/25, 4:29:40 PM");</script>
