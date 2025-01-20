@@ -1,0 +1,423 @@
+/* Reset Default Styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0044cc;
+    padding: 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.btn {
+    background-color: #ffcc00;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/pressure.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content {
+    background: rgba(123, 106, 106, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Services Section */
+.services {
+    color: white;
+    background: rgb(53, 81, 111);
+    padding: 50px;
+    text-align: center;
+}
+
+.services h2 {
+    color: white;
+    background: rgb(53, 81, 111);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.service-grid {
+    color: white;
+    background: rgb(53, 81, 111);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service {
+    width: 30%;
+    background: blue;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.service img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service h3 {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+/* Call to Action */
+.cta {
+    background: #0044cc;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.cta h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+    margin-top: 20px;
+}
+/* Contact Page - Hero Section */
+.contact-hero {
+    background: url('images/contact-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: black;
+    padding: 80px 20px;
+}
+
+.contact-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 20px;
+}
+
+/* Contact Form & Info Section */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.contact-form, .contact-info {
+    width: 45%;
+    min-width: 300px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2, .contact-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.btn-large {
+    display: block;
+    width: 100%;
+    background-color: #0044cc;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-large:hover {
+    background-color: #003399;
+}
+
+/* Contact Info */
+.contact-info p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #0044cc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-icons img {
+    width: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form, .contact-info {
+        width: 90%;
+    }
+}
+/* Booking Page - Hero Section */
+.booking-hero {
+    background: url('images/booking-bg.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: black;
+    padding: 80px 20px;
+}
+
+.booking-hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.booking-hero p {
+    font-size: 20px;
+}
+
+/* Booking Form & Info Section */
+.booking-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.booking-form, .booking-info {
+    width: 45%;
+    min-width: 300px;
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h2, .booking-info h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.booking-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.booking-form input, .booking-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Large Booking Button */
+.btn-large {
+    display: block;
+    width: 100%;
+    background-color: #0044cc;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-large:hover {
+    background-color: #003399;
+}
+
+/* Booking Info */
+.booking-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.booking-info li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .booking-form, .booking-info {
+        width: 90%;
+    }
+}
+/* Review Section Styles */
+.reviews {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.reviews h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.review-form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.review-form input, .review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Reviews List Styles */
+.review-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review p {
+    font-size: 1.1em;
+}
+
+.review span {
+    font-size: 0.9em;
+    color: #777;
+}
+

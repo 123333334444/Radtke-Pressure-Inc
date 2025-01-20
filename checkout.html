@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Radtke Pressure Washing</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadBookingDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            document.getElementById('serviceName').innerText = urlParams.get('service') || 'Not Selected';
+            document.getElementById('serviceDate').innerText = urlParams.get('date') || 'Not Selected';
+            document.getElementById('serviceTime').innerText = urlParams.get('time') || 'Not Selected';
+            document.getElementById('customerName').innerText = urlParams.get('name') || 'No Name Provided';
+            document.getElementById('customerPhone').innerText = urlParams.get('phone') || 'No Phone Provided';
+        }
+    </script>
+</head>
+<body onload="loadBookingDetails()">
+
+<header>
+    <h1>Radtke Pressure Washing</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="checkout">
+    <h2>Checkout</h2>
+    <p><strong>Service:</strong> <span id="serviceName"></span></p>
+    <p><strong>Date:</strong> <span id="serviceDate"></span></p>
+    <p><strong>Time:</strong> <span id="serviceTime"></span></p>
+    <p><strong>Name:</strong> <span id="customerName"></span></p>
+    <p><strong>Phone:</strong> <span id="customerPhone"></span></p>
+
+    <h3>Enter Payment Details</h3>
+    <form>
+        <label for="cardName">Cardholder Name:</label>
+        <input type="text" id="cardName" required>
+
+        <label for="cardNumber">Card Number:</label>
+        <input type="text" id="cardNumber" placeholder="1234 5678 9101 1121" required>
+
+        <label for="expiry">Expiration Date:</label>
+        <input type="text" id="expiry" placeholder="MM/YY" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="123" required>
+
+        <button type="submit">Complete Payment</button>
+    </form>
+</section>
+
+</body>
+</html>

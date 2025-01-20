@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Service - Radtke Pressure Washing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Radtke Pressure Washing</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="booking.html" class="active btn">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="booking-hero">
+    <h1>Book Your Pressure Washing Service</h1>
+    <p>Choose a service, pick a time, and see your total before checkout!</p>
+</section>
+
+<section class="booking-container">
+    <div class="booking-form">
+        <h2>Book a Service</h2>
+        <form id="bookingForm" action="checkout.html" method="GET">
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required>
+                <option value="Driveway Cleaning" data-price="100">Driveway Cleaning ($100)</option>
+                <option value="Deck Washing" data-price="150">Deck Washing ($150)</option>
+                <option value="House Siding Cleaning" data-price="200">House Siding Cleaning ($200)</option>
+            </select>
+
+            <label for="date">Select Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Select Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <h3>Total Price: <span id="totalPrice">$100</span></h3>
+
+            <button type="submit" class="btn-large">Proceed to Checkout</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 Radtke Pressure Washing. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Set minimum date for date picker
+    document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+    // Pricing Calculator
+    const serviceSelect = document.getElementById('service');
+    const totalPrice = document.getElementById('totalPrice');
+
+    serviceSelect.addEventListener('change', () => {
+        const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+        totalPrice.textContent = `$${selectedOption.dataset.price}`;
+    });
+
+    // Update form action dynamically based on the selected service and price
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        const service = serviceSelect.value;
+        const price = totalPrice.textContent.replace('$', '');
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+
+        // Add query parameters to the form action URL
+        const url = new URL(this.action);
+        url.searchParams.append('service', service);
+        url.searchParams.append('price', price);
+        url.searchParams.append('date', date);
+        url.searchParams.append('time', time);
+        url.searchParams.append('name', name);
+        url.searchParams.append('email', email);
+        url.searchParams.append('phone', phone);
+
+        // Set the final action URL with the query parameters
+        this.action = url.toString();
+    });
+</script>
+
+</body>
+</html>

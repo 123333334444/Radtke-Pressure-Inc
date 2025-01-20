@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radtke Pressure Washing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Radtke Pressure Washing</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="booking.html" class="btn">Book Now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Premium Pressure Washing Services</h1>
+        <p>Transform your home with our expert cleaning services. Fast, reliable, and affordable.</p>
+        <a href="booking.html" class="btn">Get a Free Quote</a>
+    </div>
+</section>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service">
+            <img src="images/pressure.jpg" alt="Driveway Cleaning">
+            <h3>Driveway Cleaning</h3>
+            <p>Restore your driveway to a like-new condition.</p>
+        </div>
+        <div class="service">
+            <img src="images/deck.jpg" alt="Deck Washing">
+            <h3>Deck Washing</h3>
+            <p>Protect and beautify your wooden or composite deck.</p>
+        </div>
+        <div class="service">
+            <img src="images/house.jpg" alt="House Siding Cleaning">
+            <h3>House Siding Cleaning</h3>
+            <p>Remove dirt, grime, and mold from your home's exterior.</p>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Review Section -->
+<section class="reviews">
+    <h2>What Our Customers Are Saying</h2>
+    
+    <!-- Review Form -->
+    <div class="review-form">
+        <h3>Leave Us a Review</h3>
+        <form id="reviewForm">
+            <label for="customerName">Your Name:</label>
+            <input type="text" id="customerName" placeholder="Enter your name" required>
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" placeholder="Write your review" required></textarea>
+
+            <button type="submit" class="btn-large">Submit Review</button>
+        </form>
+    </div>
+    
+    <!-- Display Reviews -->
+    <div class="review-list">
+        <h3>Recent Reviews</h3>
+        <div id="reviewsContainer"></div>
+    </div>
+</section>
+<section class="cta">
+    <h2>Ready to Make Your Home Shine?</h2>
+    <a href="booking.html" class="btn">Book Your Service Today</a>
+</section>
+<footer>
+    <p>&copy; 2025 Radtke Pressure Washing. All Rights Reserved.</p>
+</footer>
+
+<script>
+// Load existing reviews from localStorage (if any)
+window.onload = function() {
+    loadReviews();
+};
+
+// Handle form submission
+document.getElementById('reviewForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get review data from form
+    const name = document.getElementById('customerName').value;
+    const reviewText = document.getElementById('reviewText').value;
+
+    // Create review object
+    const review = {
+        name: name,
+        text: reviewText,
+        date: new Date().toLocaleString()
+    };
+
+    // Save review in localStorage
+    let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+    reviews.push(review);
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+
+    // Clear form fields
+    document.getElementById('customerName').value = '';
+    document.getElementById('reviewText').value = '';
+
+    // Reload the reviews list
+    loadReviews();
+});
+
+// Load and display reviews
+function loadReviews() {
+    const reviewsContainer = document.getElementById('reviewsContainer');
+    reviewsContainer.innerHTML = '';
+
+    // Retrieve reviews from localStorage
+    const reviews = JSON.parse(localStorage.getItem('reviews')) || [];
+
+    // Display each review
+    reviews.forEach(review => {
+        const reviewElement = document.createElement('div');
+        reviewElement.classList.add('review');
+        
+        reviewElement.innerHTML = `
+            <p><strong>${review.name}</strong> <span>(${review.date})</span></p>
+            <p>${review.text}</p>
+        `;
+        
+        reviewsContainer.appendChild(reviewElement);
+    });
+}
+</script>
+
+</body>
+</html>
